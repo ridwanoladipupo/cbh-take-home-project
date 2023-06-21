@@ -1,5 +1,4 @@
 const { deterministicPartitionKey } = require("./dpk");
-
 const crypto = require("crypto");
 
 // Function to hash a string using SHA3-512 algorithm
@@ -24,11 +23,10 @@ describe("deterministicPartitionKey", () => {
     expect(partitionKey).toBe(expectedHash);
   });
 
-  // it("Returns a hash of the candidate when its length exceeds the maximum", () => {
-  //   const longString = "a".repeat(300);
-  //   const expectedHash = hashString(longString);
-  //   const partitionKey = deterministicPartitionKey(longString);
-  //   expect(partitionKey).toBe(expectedHash);
-  // });
-
+  it("Returns a hash of the candidate when its length exceeds the maximum", () => {
+    const longString = "a".repeat(300);
+    const expectedHash = hashString(longString);
+    const partitionKey = deterministicPartitionKey({ partitionKey: longString });
+    expect(partitionKey).toBe(expectedHash);
+  });
 });

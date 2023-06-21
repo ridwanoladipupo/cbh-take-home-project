@@ -23,9 +23,9 @@ To enable Facilities to save their own custom IDs for each Agent they work with,
 
 Acceptance Criteria:
 
-The Facilities table should be modified to include a new column named "custom_agent_id" of an appropriate data type to store custom Agent IDs.
-The custom_agent_id column should be nullable to allow Facilities to save custom IDs selectively.
-The existing data in the Facilities table should be preserved during the modification process.
+1. The Facilities table should be modified to include a new column named "custom_agent_id" of an appropriate data type to store custom Agent IDs.
+2. The custom_agent_id column should be nullable to allow Facilities to save custom IDs selectively.
+3. The existing data in the Facilities table should be preserved during the modification process.
 
 Time/Effort Estimate:
 
@@ -33,11 +33,11 @@ This task is estimated to take approximately 2 hours.
 
 Implementation Details:
 
-Analyze the existing Facilities table structure and data to determine the appropriate data type for the custom_agent_id column.
-Develop a script or query to add the custom_agent_id column to the Facilities table.
-Ensure that the new column is nullable.
-Test the modification process on a development or staging environment.
-Execute the script or query on the production database to apply the changes.
+1. Analyze the existing Facilities table structure and data to determine the appropriate data type for the custom_agent_id column.
+2. Develop a script or query to add the custom_agent_id column to the Facilities table.
+3. Ensure that the new column is nullable.
+4. Test the modification process on a development or staging environment.
+5. Execute the script or query on the production database to apply the changes.
 
 Ticket 2: Update getShiftsByFacility function to include custom Agent ID
 
@@ -46,18 +46,18 @@ To use the custom Agent IDs when generating reports, the getShiftsByFacility fun
 
 Acceptance Criteria:
 
-Modify the getShiftsByFacility function to join the Facilities and Agents tables to retrieve the custom_agent_id column for each Shift.
-Include the custom_agent_id in the metadata about the Agent assigned to each Shift in the returned data.
+1. Modify the getShiftsByFacility function to join the Facilities and Agents tables to retrieve the custom_agent_id column for each Shift.
+2. Include the custom_agent_id in the metadata about the Agent assigned to each Shift in the returned data.
 
 Time/Effort Estimate:
 This task is estimated to take approximately 4 hours.
 
 Implementation Details:
 
-Review the existing implementation of the getShiftsByFacility function to understand its structure and how the data is retrieved.
-Modify the function to include a join operation between the Facilities and Agents tables using the Facility's ID and the Agent's ID.
-Update the function to include the custom_agent_id column from the Facilities table in the returned data.
-Test the updated function using sample data to ensure the custom_agent_id is correctly retrieved and included in the result.
+1. Review the existing implementation of the getShiftsByFacility function to understand its structure and how the data is retrieved.
+2. Modify the function to include a join operation between the Facilities and Agents tables using the Facility's ID and the Agent's ID.
+3. Update the function to include the custom_agent_id column from the Facilities table in the returned data.
+4. Test the updated function using sample data to ensure the custom_agent_id is correctly retrieved and included in the result.
 
 Ticket 3: Update generateReport function to use custom Agent ID
 
@@ -66,14 +66,15 @@ To generate reports with the custom Agent IDs, the generateReport function needs
 
 Acceptance Criteria:
 
-Modify the generateReport function to replace the internal database ID with the custom_agent_id in the generated reports.
-The custom_agent_id should be displayed as the Agent ID in the reports.
+1. Modify the generateReport function to replace the internal database ID with the custom_agent_id in the generated reports.
+2. The custom_agent_id should be displayed as the Agent ID in the reports.
+
 Time/Effort Estimate:
 This task is estimated to take approximately 3 hours.
 
 Implementation Details:
 
-Review the existing implementation of the generateReport function to understand how the Shifts and Agent IDs are processed to generate PDF reports.
-Update the function to retrieve the custom_agent_id for each Agent and use it instead of the internal database ID when generating the reports.
-Ensure that the custom_agent_id is properly formatted and displayed as the Agent ID in the generated PDF reports.
-Test the updated function with a variety of Shifts and Agents to verify that the custom_agent_id is correctly used in the reports.
+1. Review the existing implementation of the generateReport function to understand how the Shifts and Agent IDs are processed to generate PDF reports.
+2. Update the function to retrieve the custom_agent_id for each Agent and use it instead of the internal database ID when generating the reports.
+3. Ensure that the custom_agent_id is properly formatted and displayed as the Agent ID in the generated PDF reports.
+4. Test the updated function with a variety of Shifts and Agents to verify that the custom_agent_id is correctly used in the reports.

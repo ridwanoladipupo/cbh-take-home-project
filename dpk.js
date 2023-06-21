@@ -4,7 +4,7 @@ const crypto = require("crypto");
 const hashString = (data) => crypto.createHash("sha3-512").update(data).digest("hex");
 
 // Function to determine the partition key
-exports.deterministicPartitionKey = (event) => {
+const deterministicPartitionKey = (event) => {
   const TRIVIAL_PARTITION_KEY = "0";
   const MAX_PARTITION_KEY_LENGTH = 256;
 
@@ -28,4 +28,8 @@ exports.deterministicPartitionKey = (event) => {
 
   // Return the candidate as the partition key
   return candidate;
+};
+
+module.exports = {
+  deterministicPartitionKey,
 };

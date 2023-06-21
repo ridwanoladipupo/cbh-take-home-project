@@ -16,7 +16,7 @@ You will be graded on the level of detail in each ticket, the clarity of the exe
 
 ## Your Breakdown Here
 
-Ticket 1: Add custom Agent ID field to the Facilities table
+### Ticket 1: Add custom Agent ID field to the Facilities table
 
 Description:
 To enable Facilities to save their own custom IDs for each Agent they work with, we need to modify the Facilities table in the database to include a custom Agent ID field. This will allow Facilities to associate their own IDs with the Agents.
@@ -39,7 +39,7 @@ Implementation Details:
 4. Test the modification process on a development or staging environment.
 5. Execute the script or query on the production database to apply the changes.
 
-Ticket 2: Update getShiftsByFacility function to include custom Agent ID
+### Ticket 2: Update getShiftsByFacility function to include custom Agent ID
 
 Description:
 To use the custom Agent IDs when generating reports, the getShiftsByFacility function needs to be updated. It should retrieve the custom Agent IDs associated with the Shifts worked by each Agent and include this information in the returned data.
@@ -59,7 +59,7 @@ Implementation Details:
 3. Update the function to include the custom_agent_id column from the Facilities table in the returned data.
 4. Test the updated function using sample data to ensure the custom_agent_id is correctly retrieved and included in the result.
 
-Ticket 3: Update generateReport function to use custom Agent ID
+### Ticket 3: Update generateReport function to use custom Agent ID
 
 Description:
 To generate reports with the custom Agent IDs, the generateReport function needs to be updated to utilize the custom_agent_id instead of the internal database ID when creating the reports in PDF format.

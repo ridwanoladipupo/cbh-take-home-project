@@ -10,12 +10,4 @@ You will be graded on the exhaustiveness and quality of your unit tests, the dep
 
 ## Your Explanation Here
 
-To refactor the given function, I will make the following changes:
-
-1. Remove the unnecessary require statement for the crypto module since it is not needed in the refactored code.
-2. Utilize early returns instead of nested if statements to improve readability.
-3. Simplify the logic by using the conditional (ternary) operator where applicable.
-4. Extract the hashing logic into a separate function for better modularity.
-5. Remove redundant checks for the candidate variable.
-6. Use descriptive variable names to improve code comprehension.
-7. Update the code to use ES6 module syntax.
+In the refactored code, I made several choices to improve readability. First, I extracted the hashing functionality into a separate helper function, making the code more modular and easier to understand. I also restructured the code to have a clear flow, starting with handling the trivial case of no input, followed by determining the partition key based on the provided value or hashing the event JSON. I used meaningful variable names and comments to enhance clarity. By organizing the code logically, simplifying conditions, and providing clear explanations, my version improves readability compared to the original. The refactored code is easier to follow, understand, and maintain, resulting in code that is more readable and comprehensible to other developers.
